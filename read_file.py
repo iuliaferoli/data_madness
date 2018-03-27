@@ -17,10 +17,10 @@ def read_file(path):
 					episode = []
 					next(infile)
 				elif line.find("{") < 0:
-					line = ''.join( c for c in line if  c not in delete + "'" ).strip()
+					line = ''.join( c for c in line if  c not in delete + "'" ).strip().lower()
 					episode.append(line)
 
-	#print (subtitles[2][5][3])
+	print (subtitles[2][5][3])
 	#subtitles [season 1: [ [episode], [episode], [episode] ], season2 [[] [] [] ], season 3 [[] [] [] ]
 	#count from 0 so print (subtitles[2][5][3]) season 3 episode 6 line 4
 
