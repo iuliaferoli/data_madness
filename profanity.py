@@ -4,10 +4,8 @@ Created on Tue Mar 27 19:23:59 2018
 
 @author: ami
 """
-import re
+
 import read_file_in_one_block
-
-
 
 path = read_file_in_one_block.path + '\\data\\'
 # read data from file
@@ -24,4 +22,5 @@ profane_words = ['dunghole', 'balls', 'prick', 'twat', 'bitch','whore',
 for word in profane_words:
     subtitles[word] = [subtitles["text"].iloc[index].count(word) for index,row in subtitles.iterrows()]
     
-
+subtitles.to_csv(path + 'profanity.csv')
+print("created profanity.csv at: " + path)
