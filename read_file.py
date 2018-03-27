@@ -1,6 +1,9 @@
+import string
 path = "C:/Users/ife/OneDrive - Mediaan abs b.v/UNI/block 4/Data analysis/data madness/"
 
 subtitles = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
+
+delete = '"0123456789:.,!?'
 
 for i in subtitles:
 	with open(path + "season" + str(i+1) + ".json") as infile:
@@ -12,6 +15,7 @@ for i in subtitles:
 				episode = []
 				next(infile)
 			elif line.find("{") < 0:
+				line = ''.join( c for c in line if  c not in delete + "'" ).strip()
 				episode.append(line)
 
 
