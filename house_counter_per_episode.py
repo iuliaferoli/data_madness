@@ -1,7 +1,9 @@
 import read_file
 from pandas import DataFrame as df
 
-subtitles = read_file.read_file(read_file.path)
+# use data frames season column, episode columnd, 1 1 sort of keys
+
+subtitles = read_file.read_file(read_file.path + '\\data\\')
 
 seasons = []
 episodes = []
