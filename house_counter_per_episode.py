@@ -3,7 +3,7 @@ from pandas import DataFrame as df
 
 # use data frames season column, episode columnd, 1 1 sort of keys
 
-subtitles = read_file.read_file(read_file.path)
+subtitles = read_file.read_file(read_file.path + '\\data\\')
 
 seasons = []
 episodes = []
