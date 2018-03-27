@@ -13,6 +13,7 @@ house_names = ["arryn", "baratheon","grejoy", "lannister","stark" ,"targaryen", 
 # count profane words per episode 
 for word in house_names:
     subtitles[word] = [subtitles["text"].iloc[index].count(word) for index,row in subtitles.iterrows()]
-    
-subtitles.to_csv(path + 'house_names.csv')
-print("created house_names.csv at: " + path)
+
+subtitles.to_csv(path + 'house_counts.csv')
+print("created house_counts.csv at: " + path)
+
