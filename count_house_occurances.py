@@ -1,8 +1,6 @@
 import re
 import read_file_in_one_block
 
-
-
 path = read_file_in_one_block.path + '\\data\\'
 # read data from file
 subtitles_dict = read_file_in_one_block.read_file(path)
@@ -16,4 +14,5 @@ house_names = ["arryn", "baratheon","grejoy", "lannister","stark" ,"targaryen", 
 for word in house_names:
     subtitles[word] = [subtitles["text"].iloc[index].count(word) for index,row in subtitles.iterrows()]
     
-
+subtitles.to_csv(path + 'house_names.csv')
+print("created house_names.csv at: " + path)
