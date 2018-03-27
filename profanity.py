@@ -4,10 +4,8 @@ Created on Tue Mar 27 19:23:59 2018
 
 @author: ami
 """
-import re
+
 import read_file_in_one_block
-
-
 
 path = read_file_in_one_block.path + '\\data\\'
 # read data from file

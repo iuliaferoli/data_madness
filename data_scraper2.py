@@ -3,9 +3,10 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import pandas as pd
 from pandas import DataFrame as df
+import read_file_in_one_block
 
+path = read_file_in_one_block.path + '\\data\\'
 
 ''' get soup '''
 def get_soup(url):
@@ -42,7 +43,7 @@ if __name__ == '__main__':
         rankings_df
         print("done with season " + str(i))
         
-    rankings_df.to_csv('info.csv')
+    rankings_df.to_csv(path + 'info.csv')
     
     
     
