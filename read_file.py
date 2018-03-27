@@ -1,23 +1,22 @@
 path = "C:/Users/ife/OneDrive - Mediaan abs b.v/UNI/block 4/Data analysis/data madness/"
 
-subtitles = {1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: []}
+subtitles = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
 
 for i in subtitles:
-	with open(path + "season" + str(i) + ".json") as infile:
-		episode_number = 1
-		episode = {episode_number : []}
+	with open(path + "season" + str(i+1) + ".json") as infile:
+		episode = []
 
 		for line in infile:
 			if line.find(" }") > 0 :
 				subtitles[i].append(episode)
-				episode_number = episode_number + 1
-				episode = {episode_number : []}
+				episode = []
 				next(infile)
 			elif line.find("{") < 0:
-				episode[episode_number].append(line)
-
-for line in subtitles[2][4]:
-	print (line + "\n")
+				episode.append(line)
 
 
-# season 1: [ {episode 1:[lines]}, {2:[]}, {3:[]} ]
+
+print (subtitles[2][5][3])
+
+#subtitles [season 1: [ [episode], [episode], [episode] ], season2 [[] [] [] ], season 3 [[] [] [] ]
+#count from 0 so print (subtitles[2][5][3]) season 3 episode 6 line 4
