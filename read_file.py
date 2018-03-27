@@ -1,4 +1,5 @@
 import os
+import re
 
 path = os.getcwd()
 
@@ -19,8 +20,14 @@ def read_file(path, DEBUG = False):
                     episode = []
                     next(infile)
                 elif line.find("{") < 0:
-                    line = ''.join( c for c in line if  c not in delete + "'" + r'\(\s\w*\s\)').strip().lower()
-                    episode.append(line)
+                    line = ''.join( c for c in line if  c not in delete + "'").strip().lower()
+                    line = re.sub(r'</?[i|b]>', "", line)
+                    line = re.sub(r"\(.*\)", "", line)
+                    line = re.sub(r"</?font(.*)>", "", line)
+                    line = re.sub(r".* sync .* by .*", "", line)
+                    line = re.sub(r".* original .* date .* ", "", line)
+                    if line != "" :
+                        episode.append(line)
                     
     if DEBUG:   
        print (subtitles[2][5][3])
