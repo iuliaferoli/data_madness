@@ -8,7 +8,7 @@ subtitles_dict = read_file_in_one_block.read_file(path)
 subtitles = read_file_in_one_block.convert_to_df(subtitles_dict)
 
 # make list of profane words
-house_names = ["arryn", "baratheon","grejoy", "lannister","stark" ,"targaryen", "tyrell", "frey", "tully"]
+house_names = ["arryn", "baratheon","greyjoy", "lannister","stark" ,"targaryen", "tyrell", "frey", "tully"]
 
 # count profane words per episode 
 for word in house_names:
