@@ -23,4 +23,5 @@ ratings = df.from_csv(path+'info.csv')
 # merge ratings and number of words per episode
 df = pd.merge(ratings, subtitles, on = ['season', 'episode'])
 
-
+df.to_csv(path + 'ratings_vs_wordcount.csv')
+print("created ratings_vs_wordcount.csv at: " + path)

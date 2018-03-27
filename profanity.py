@@ -22,4 +22,5 @@ profane_words = ['dunghole', 'balls', 'prick', 'twat', 'bitch','whore',
 for word in profane_words:
     subtitles[word] = [subtitles["text"].iloc[index].count(word) for index,row in subtitles.iterrows()]
     
-
+subtitles.to_csv(path + 'profanity.csv')
+print("created profanity.csv at: " + path)
