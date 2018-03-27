@@ -17,3 +17,5 @@ for word in house_names:
     subtitles[word] = [subtitles["text"].iloc[index].count(word) for index,row in subtitles.iterrows()]
     
 
+subtitles.to_csv(path + 'house_counts.csv')
+print("created house_counts.csv at: " + path)
