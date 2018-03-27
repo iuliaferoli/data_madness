@@ -46,6 +46,7 @@ def read_file(path, subtitles, delete, house_names, df, DEBUG = False):
                         episode += line + "\n"
                         print(line)
                         response = count_house_occurances(line, house_names, response)	
+                    
     if DEBUG:   
        print (subtitles[2][5][3])
     #subtitles [season 1: [ [episode], [episode], [episode] ], season2 [[] [] [] ], season 3 [[] [] [] ]
