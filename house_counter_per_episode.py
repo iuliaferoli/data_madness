@@ -8,7 +8,7 @@ subtitles = read_file.read_file(read_file.path + '\\data\\')
 seasons = []
 episodes = []
 empty = []
-house_names = {"arryn":[] ,"baratheon":[] ,"frey":[] ,"greyjoy":[] ,"lannister":[] ,"martell":[] ,"stark":[] ,"targaryen":[] ,"tully":[],"tyrell":[] }
+
 
 for i,season in enumerate(subtitles):
 	for j,episode in enumerate(subtitles[season]):
@@ -16,16 +16,7 @@ for i,season in enumerate(subtitles):
 		episodes.append(j+1)
 		empty.append("")
 
-def count_house_occurances(line, house_names):
-	response = []
-	for name in house_names:
-		count = 0
-		for word in line.split():	
-			print (word)
-			if word.find(name) >= 0:
-				count += 1
-		response.append(count)
-	return response
+
 
 """
 test = "stark stark baratheon frey nope maybe tully i love frey"
